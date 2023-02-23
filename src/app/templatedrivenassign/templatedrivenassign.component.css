@@ -1,0 +1,19 @@
+.registrationForm{
+    max-width: 400px;
+    margin: 50px auto 0 auto;
+    
+}
+.registration-Form{
+    display: flex;
+    flex-direction: column;
+
+}
+.form-val {
+    margin-top: 10px;
+} 
+
+.abc,.btn btn-primary {
+    color: blue;
+    margin-left: 50px;
+    
+}

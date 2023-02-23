@@ -1,0 +1,22 @@
+.marginEmail{
+    margin-left: 35px;
+}
+.marginDate{
+    margin-left: 60px;
+}
+.marginCourse{
+    margin-left: 45px;
+}
+.marginPass{
+    margin-left: 50px;
+}
+.btn-btn-primary,.marginClass{
+    margin-left: 170px;
+    color: blueviolet;
+}
+.abc{
+    color: red;
+}
+/* .col-md-6 text-left rounded shadow py-5{
+    background-color: aquamarine;
+} */

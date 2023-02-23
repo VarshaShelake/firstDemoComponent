@@ -1,0 +1,60 @@
+<!-- <h4>Ng Class Example : </h4>
+
+<ul *ngFor="let person of peoples">
+<li [ngClass]="{
+    'text-success': person.country === 'UK',
+    'text-primary': person.country === 'USA',
+    'text-danger': person.country === 'HK'
+}">
+    {{person.name}} {{person.country}}
+</li>
+</ul> -->
+
+
+<!-- *ngSwitch example to display imageson card with discreption -->
+
+    <!-- <ng-container class="card" style="width: 10rem;" *ngFor="let course of courses"> -->
+      <!-- <div *ngFor="let flowers of flowers"> -->
+      <!-- <div *ngIf="course.id">   -->
+      <!-- <img class="card-img-top" [src]="flowers.id" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{flowers.name}}</h5>
+          <div [ngSwitch]="flowers.name">
+                <div class="btn btn-info" *ngSwitchCase="'Rose'">Rose</div>
+                <div class="btn btn-primary" *ngSwitchCase="'Mogara'">Mogara</div>
+                <div class="btn btn-secondary" *ngSwitchCase="'Prajakta'">Prajakta</div>
+                <div class="btn btn-secondary" *ngSwitchCase="'Lotus'">Lotus</div>
+                <div class="btn btn-secondary" *ngSwitchDefault>All level</div>
+          </div>
+        </div>
+      </div> -->
+
+
+    
+    <!-- </div> -->
+<!-- </ng-container> -->
+
+<!-- *ngSwitch example to display imageson card with discreption -->
+    <div >
+        <!-- <ng-container class="card" style="width: 10rem;" *ngFor="let course of courses"> -->
+          <div *ngFor="let flowers of flowers"  >
+          <!-- <div *ngIf="course.id">   -->
+          <img  class="flowers" [src]="flowers.flowerUrl"width="90px" alt="Card image cap" >
+          <!-- <img *ngIf="flowers.flowerUrl; width="200px" [src]="flowers.iconURL" alt="This is nature image"> -->
+
+            <div class="card-body" >
+              <h5 class="flowers-name">{{flowers.name}}</h5>
+              <div [ngSwitch]="flowers.name">
+                    <div class="btn btn-info" *ngSwitchCase="'Rose'" >Rose<br></div>
+                    <div class="btn btn-primary" *ngSwitchCase="'Mogara'">Mogara<br></div>
+                    <div class="btn btn-secondary" *ngSwitchCase="'Prajakta'">Prajakta<br></div>
+                    <div class="btn btn-secondary" *ngSwitchCase="'Lotus'">Lotus<br></div>
+                    <div class="btn btn-secondary" *ngSwitchDefault>All level</div>
+              </div>
+            </div>
+          </div>
+        
+        <!-- </div> -->
+<!-- </ng-container> -->
+</div>
+

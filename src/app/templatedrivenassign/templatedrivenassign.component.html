@@ -1,0 +1,223 @@
+<!-- <mat-card class="login-page">
+  <mat-card-title>
+    Registration Form Using Template Driven
+  </mat-card-title>
+  <mat-card-content>
+    <form class="login-form" #loginForm="ngForm">
+
+
+
+      <mat-form-field>
+
+        <input matInput type="email" name="email" ngModel #email="ngModel" required email minlength="3" maxlength="40"
+          pattern="^[a-zA-Z0-9._%+-]+@codemindtechnology.com$" placeholder="Email">
+
+        <mat-error *ngIf="email.errors?.required">The email is mandatory</mat-error>
+       
+        <mat-error *ngIf="email.errors?.pattern">Please Enter Valid Domain like '@codemindtechnology.com'</mat-error>
+
+      </mat-form-field>
+     
+
+
+
+      <mat-form-field>
+        <input matInput ngModel #password="ngModel" name="password" type="password" minlength="5" maxlength="20"
+          placeholder="Password" required>
+
+        <mat-error *ngIf="password.errors?.required">The password is mandatory</mat-error>
+        <mat-error *ngIf="password.errors?.minlength">
+          your password must have minimum {{password.errors?.minlength.requiredLength}} chars,
+          but it only has {{password.errors?.minlength.actualLength}}.
+        </mat-error>
+      </mat-form-field>
+
+
+
+      <select class="form-control" name="course" [ngModel]="defaultValue">
+        <option *ngFor="let course of courses" value="{{course}}">{{course}}</option>
+      </select>
+
+      
+      <div class="form-group" *ngFor="let gender of genders">
+
+        <input type="radio" name="gender" id="gender" value="{{gender.value}}" [ngModel]="defaultGender"
+          class="custom-control custom-radio">
+        <label for="{{gender.id}}">{{gender.value}}</label>
+      </div>
+      <button mat-raised-button color="primary" (click)="login(loginForm)">Login</button>
+    </form>
+    <div class="form-val">
+      
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<div class="row justify-content-center mt2" *ngIf="isSubmitted">
+  <div class="col-md-6 rounded shadow py-4">
+    <h2>Form Data</h2>
+    <p>Email: <strong>{{formData.email}}</strong></p>
+    <p>Password: <strong>{{formData.password}}</strong></p>
+    <p>Course: <strong>{{formData.course}}</strong></p>
+    <p>Gender: <strong>{{formData.gender}}</strong></p>
+
+  </div>
+</div> -->
+
+
+<mat-card class="registrationForm">
+  <!-- <mat-card-title class="abc">
+     Registration Form
+  </mat-card-title> -->
+  <h2 class="abc">Registration Form</h2>
+  <mat-card-content>
+      <form class="registration-Form" #registrationForm="ngForm">
+        <!-- <h5>First Name  &nbsp;&nbsp;&nbsp;&nbsp;     Last Name </h5> -->
+          <mat-form-field>
+            <h6>First Name</h6>
+              <input type="text" matInput ngModel
+               name="fname" 
+               id="fname"
+               value="fname"
+               minlength="5"
+                maxlength="10"
+                required fname
+                 #fname="ngModel">
+                 <mat-error *ngIf="fname.errors?.required"> Please enter first name...</mat-error>
+                <mat-error *ngIf="fname.errors?.minlength">
+                  your First name must have minimum {{password.errors?.minlength.requiredLength}} chars,
+                  but it only has {{fname.errors?.minlength.actualLength}}.
+                </mat-error>
+          </mat-form-field>
+          
+          <mat-form-field>
+            <h6>Last Name</h6>
+              <input type="text" matInput ngModel
+               name="lname"
+                id="lname"
+                value="lname"
+                 maxlength="15"
+                 #lname="ngModel" 
+                 required lname>
+                 <mat-error *ngIf="lname.errors?.required">Please enter last name...</mat-error>
+                
+          </mat-form-field>
+          <h6>Age </h6>
+        <mat-form-field>
+          <input type="number" name="age"   matInput ngModel  #age="ngModel"  required pattern="(?:1[7-9]|20)">
+          <mat-error *ngIf="age.errors?.pattern">Enter age between 17 to 20 </mat-error>
+        </mat-form-field>
+         
+            <!-- <h5>Email Address:</h5> -->
+            <!-- <mat-form-field>
+              <input type="email" matInput ngModel
+              name="email"
+              value="email"
+              required
+              #email="ngModel"
+              placeholder="email-Id"
+              pattern="^[a-zA-Z0-9._%+-]+@codemindtechnology.com$">
+            </mat-form-field> -->
+
+          <mat-form-field>
+            <h6>Email Id</h6>
+            <input type="email" matInput ngModel
+            name="email"
+            value="email"
+            required
+            #email="ngModel"
+            pattern="^[a-zA-Z0-9._%+-]+@codemindtechnology.com$"  (blur)="checkemail(email)">
+            <mat-error *ngIf="email.errors?.required">The email is mandatory</mat-error>
+            <small class="text-danger" *ngIf="isEmailValid">Email domain not allowed</small>
+            <mat-error *ngIf="email.errors?.pattern">Enter Valid Domain like '******@codemindtechnology.com'</mat-error>
+          </mat-form-field>
+
+           <br>
+           
+            <mat-form-field>
+              <h6>Contact Number</h6>
+              <input type="tel"  name="phone" id="phone"  matInput ngModel
+              maxlength="10"
+              required
+              #contactNumber="ngModel">
+            </mat-form-field>
+          
+            <h6>City</h6>
+            <select class="form-control" name="city" value="city"  [ngModel]="defaultCity">
+              <option *ngFor="let city of cities"  value="{{city}}">{{city}}</option>
+            </select>
+
+           <br>
+           <br>
+           <h6>Gender</h6>
+           <div class="form-group" *ngFor="let gender of genders">
+            <input type="radio" name="gender" id="gender" value="{{gender.value}}" [ngModel]="defaultGender"
+            class="custom-control custom-radio">
+            <label for="{{gender.id}}">{{gender.value}}</label>
+          </div>
+          <br>
+            <!-- <h5>Password</h5>
+            <mat-form-field>
+              <input type="password" matInput name="password" id="password" ngModel
+              minlength="8"
+              maxlength="20"
+         
+              #password="ngModel"
+              required
+              >
+              <mat-error *ngIf="password.errors?.minlength">
+                  your password must have minimum {{password.errors?.minlength.requiredLength}} chars,
+                  but it only has {{password.errors?.minlength.actualLength}}.
+                </mat-error>
+
+            </mat-form-field><br>
+            <h6>Confirm Password</h6>
+            <mat-form-field>
+              <input type="password" matInput name="confirm-pwd" id="confirm-pwd" ngModel
+             
+              #password="ngModel"
+              required
+              >
+            </mat-form-field>
+            <button  mat-raised-button color="primary" (click)="registration(registrationForm)">Submit</button>
+ -->
+ <mat-form-field>
+ <h6>Password</h6>
+ <input matInput ngModel #password="ngModel" type="password" id="password" name="password"
+     class="borderInput" required minlength="3" maxlength="10" pattern = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,12}$" >
+     <mat-error *ngIf="password.errors?.pattern">Password must have minimum 5 length</mat-error>
+ </mat-form-field>
+
+ <mat-form-field>
+ <h6>Confirm Password</h6>
+ <input  matInput ngModel #Cpassword="ngModel" type="password" id="Cpassword" name="Cpassword"
+     class="borderInput" required minlength="5" maxlength="10" pattern="{{password.value}}">
+
+ <mat-error *ngIf="Cpassword.errors?.pattern">Password Missmatch</mat-error>
+</mat-form-field>
+
+ <button class=" btn btn-primary" (click)="login(registertationform)">Submit</button>
+
+
+
+      </form>
+  </mat-card-content>
+</mat-card>
+
+
+  <div class="row justify-content-center mt2" *ngIf="isSubmitted">
+      <div class="col-md-6 rounded shadow py-4">
+        <h2>Form Data</h2>
+        <p>First Name: <strong>{{formData.fname}}</strong></p>
+        <p>Last Name: <strong>{{formData.lname}}</strong></p>
+        <p>Age: <strong>{{formData.age}}</strong></p>
+        <p>Email-Id: <strong>{{formData.email}}</strong></p>
+        <p>Phone: <strong>{{formData.phone}}</strong></p>
+        <p>City: <strong>{{formData.city}}</strong></p>
+        <p>Gneder: <strong>{{formData.gender}}</strong></p>
+        <p>Password: <strong>{{formData.password}}</strong></p>
+   
+      </div>
+</div>
+
+

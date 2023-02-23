@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded shadow py-5">
+            <h2 class="marginClass">Form </h2>
+                <form class="formClass" [formGroup]="reactiveFormAssign" (ngSubmit)="OnSubmit()">
+                    <div class="form-group">
+                        <label for="Email Id">Email Id</label>
+                        <input class="marginEmail" type="text" formControlName="email">
+                        <small class="text-danger" *ngIf="!reactiveFormAssign.get('email').valid && reactiveFormAssign.get('email').touched">Please Enter Valid Email Address..</small>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="Course">Course</label>
+                        <select class="marginCourse" name="course" formControlName="course" id="course">
+                            <option value="Basic">Basic</option>
+                            <option value="Advanced">Advanced</option>
+                            <option value="Pro">Pro</option>
+                    </select>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="Password">Password</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <!-- <input class="marginPass" type="text" formControlName="password" autofocus> -->
+                        <input class="marginPass" type="password" formControlName="password" id="password" name="password"
+                        class="borderInput" required minlength="3" maxlength="10" pattern = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,12}$" >
+                        <small class="text-danger" *ngIf="!reactiveFormAssign.get('password').value && reactiveFormAssign.get('password').touched">Please Enter Password....</small>
+                    </div>
+                    <br> 
+                    <div class="form-group">
+                        <label for="Date">Date</label>
+                        <input class="marginDate" type="date" formControlName="date">
+                        <small class="text-danger" *ngIf="!reactiveFormAssign.get('date').value && reactiveFormAssign.get('date').touched">Please Enter Date..</small>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <button class="btn-btn-primary">Submit</button>
+                        <!-- <input type="button" formControlName="button" name="Button" placeholder="Submit">
+                        <small class="text-danger" *ngIf="!reactiveFormAssign.get('email').value && 
+                        reactiveFormAssign.get('password').value &&
+                        reactiveFormAssign.get('date').value &&
+                        reactiveFormAssign.get('button').value" >Please Enter All Above Fields...</small> -->
+                    </div>
+                </form>
+                <br>
+                
+                <div class="row justify-content-center mt-2" *ngIf="isSubmitted">
+                    <div class="col-md-6 rounded shadow py4">
+                      <h2 class="abc">Form Data</h2>
+                      <p>Email Id : <strong>  {{ reactiveFormAssign.get('email').value}}</strong></p>
+                      <p>Course : <strong>  {{ reactiveFormAssign.get('course').value}}</strong></p>
+                      <p>Password : <strong>  {{ reactiveFormAssign.get('password').value}}</strong></p>
+                      <p>Date : <strong>  {{ reactiveFormAssign.get('date').value}}</strong></p>
+    
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

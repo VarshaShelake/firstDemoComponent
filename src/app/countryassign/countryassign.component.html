@@ -1,0 +1,19 @@
+
+<h4 style="margin-left: 20px;">*ngFor Hands On:</h4>
+<label>Select Country : </label>
+&nbsp;&nbsp;
+<select (change)="OnCountrySelect($event)" >
+    <option value=""> Select Country </option>
+    &nbsp;&nbsp;<option value="{{c.id}}" *ngFor="let c of countries">
+        {{c.name}}
+    </option>
+</select>
+<br>
+<br>
+<label>Select States : </label>
+&nbsp;&nbsp;<select style="margin-left: 15px;">
+    <option value=""> Select States </option>
+    <option value="{{s.id}}" *ngFor="let s of states">
+        {{s.name}}
+    </option>
+</select>

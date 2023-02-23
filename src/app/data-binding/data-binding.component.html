@@ -1,0 +1,36 @@
+<!-- <p>data-binding works!</p> -->
+
+
+
+
+<!-- <input type="text" (keyup)="onKeyUp($event)"> -->
+<!-- 
+<h1>Two way databinding</h1>
+<label>User Name </label>
+<input type="text" [(ngModel)]="firstName"> -->
+
+  <!-- {{firstName}} -->
+
+  <ol>
+    <li>
+        <label>Added input field which updates a property 'UserName' via two way data binding</label><br><br>
+         <label>User Name </label><br><br>
+        <input type="text" [(ngModel)]="firstName"><br><br><br>
+    </li>
+    <li>
+        <label>Output of 'userName' property using string interpolation</label><br><br>
+        <input type="text"[ngModel]='firstName'>&nbsp;&nbsp;{{firstName}}<br><br><br>
+    </li>
+    <li>
+        <label>Added button which may only be clicked if the 'userName' is NOT a empty string</label><br><br>
+        <button (click)=" onButtonClick()">Click Me</button><br><br><br>
+        
+    </li>
+    <li>
+        <label>On clicking the Reset Button 'UserName' returns the empty string</label><br><br>
+        <label>User Name</label>&nbsp;&nbsp;
+        <input type="text" [(ngModel)]="firstName"><br><br>
+        <button (click)=" onButtonClick()">Reset UserName</button><br><br>
+        
+    </li>
+  </ol>

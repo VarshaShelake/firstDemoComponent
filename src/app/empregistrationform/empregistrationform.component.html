@@ -1,0 +1,40 @@
+<mat-card>
+<mat-card-title>
+    Employee Registration Form(Using Template Driven)
+</mat-card-title>
+<mat-card-content>
+    <form class="login-form" #loginForm="ngForm">
+    <mat-form-field>
+        <input matInput ngModel name="FirstName" type="FirstName" placeholder="FirstName" required>
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput  ngModel name="LastName" type="LastName" placeholder="LastName" required>
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput  ngModel name="MobileNumber" type="MobileNumber" placeholder="MobileNumber" required>
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput  ngModel name="EmailId" type="EmailId" placeholder="EmailId" required>
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput  ngModel name="Education" type="Education" placeholder="Education" required>
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput  ngModel name="TotalExperience/Fresher" type="TotalExperience" placeholder="TotalExperience" required>
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput  ngModel name="Technology" type="Technology" placeholder="Technology" required>
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput  ngModel name="Others" type="Others" placeholder="Others" >
+    </mat-form-field><br>
+    */z 
+    
+        <button [disabled]="!loginForm.valid" mat-raised-button color="primary" (click)="login(loginForm)">Login</button>
+    
+</form>
+<div class="form-val">
+    {{ loginForm.value | json}}
+</div>
+</mat-card-content>
+</mat-card>
