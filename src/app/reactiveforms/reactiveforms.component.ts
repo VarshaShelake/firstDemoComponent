@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactiveforms',
@@ -11,12 +11,22 @@ export class ReactiveformsComponent implements OnInit {
   defaultValue = 'Angular';
   defaultGender = 'Male';
   myReactiveForm: FormGroup;
-  constructor() { 
+  NaNames: any;
+  constructor(private fb:FormBuilder) { 
     this.createForm();
   }
 
   ngOnInit() {
   }
+
+// ageCalculator(){
+//   if(this.age){
+//    const convertAge=new Date(this.age);
+//    const timeDiff=Math.abs(Date.now()-convertAge.getTime());
+//     this.showAge=Math.floor(timeDiff/(1000*3600*24)/365);
+//   }
+// }
+
   genders = [ 
     {
       id: '1', value: 'Male'
@@ -36,6 +46,19 @@ export class ReactiveformsComponent implements OnInit {
       'course': new FormControl('Angular'),
       'genders': new FormControl('null')
     });
+
+    //using form builder
+    // this.myReactiveForm = this.fb.group({
+    //   userDetails : this.fb.group({
+    //     username:['',[Validators.required,this.NaNames.bind(this)]],
+    //     email:['',[Validators.required,Validators.email],this.NaNames]
+    //   }),
+    //   course : ['Angular'],
+    //   genders : this.fb.group
+
+    // })
+
+
   }
 
   OnSubmit() {

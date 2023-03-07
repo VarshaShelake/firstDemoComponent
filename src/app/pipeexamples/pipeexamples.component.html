@@ -1,0 +1,31 @@
+<div>
+    <p>Pipe Examples :{{presentDate | date }}</p>
+    <p>Pipe Examples :{{presentDate | date: 'shortDate'}}</p>
+    <p>Pipe Examples :{{presentDate | date: 'fullDate'}}</p>
+    <p>Pipe Examples :{{presentDate | date: 'dd/mm/yy'}}</p>
+    <p>Pipe Examples :{{presentDate | date: 'shortDate' | uppercase}}</p>
+</div>
+
+<!-- <div>
+    Price :
+    <p>{{price | curreny :'INR'}}</p>
+    <p>{{price | curreny :'USD'}}</p>
+    <p>{{price | curreny :'EUR'}}</p>
+</div> -->
+
+<div>
+    Price :
+    <p>{{price | currency:'INR'}}</p>
+    <p>{{price | currency:'USD'}}</p>
+    <p>{{price | currency:'EUR'}}</p>
+</div>
+
+<div>
+    <p>Employee :</p>
+    <p>{{employee |json}}</p>
+</div>
+
+<div>
+    <p>Custom pipe example </p>
+    <p>{{countLenght | custom}}</p>
+</div>

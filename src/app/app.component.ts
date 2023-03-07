@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Employee } from './models/employee';
+import { DemoserviceService } from './services/demoservice.service';
+import { MysericesService } from './services/myserices.service';
 
 @Component({
   selector: 'app-root',
@@ -7,17 +9,19 @@ import { Employee } from './models/employee';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   // parentToChild : string ='i am coming from server'
   title = 'firstDemoComponent';
   name = "Varsha";
-  empCount
+  empCount;
+  namesearch='';
 
 data={
   name:'Codemind',
   dept:"IT"
 }
 
+products={}
 posts = [
   {
     title: 'Pam Tree',
@@ -28,15 +32,28 @@ posts = [
     content: 'I love this tree'
   }
 ]
+users;
 
 test='Property Binding Example With Div Tag';
 imageUrl='style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(100, 100%, 100%);transition: background-color 300ms"'
 
 // imgUrl='D:\Angular\HTML CSS TYPESCRIPT\HTML\1080p-ganpati-Images.jpg'
 
-constructor(){
+constructor( private myService:MysericesService, private demoService : DemoserviceService){
 this.getValueFromServer();
 }
+
+ngOnInit():void {
+  this.products =this.myService.products;
+  this.demoService.getUsers().subscribe(res =>{
+    console.log('user api results',res);
+    this.users=res;
+  
+   }), err =>{
+    console.log(err);
+    }
+}
+
 getValueFromServer(){
 this.empCount=1000;
 }

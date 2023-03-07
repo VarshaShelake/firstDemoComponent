@@ -1,0 +1,15 @@
+<ng-container *ngFor="let p of person">
+    <p>Person Name :{{p.name}}</p>
+    <p>Person City :{{p.city}}</p>
+</ng-container>
+
+<ng-container>
+    <p>Employee Details :</p>
+    <div *ngFor="let e of emp">
+    <!-- <p>Emp Id : <strong>{{e.empId}}</strong></p>
+    <p>Emp Name : <strong>{{e.name}}</strong></p>
+    <p>Emp Role : <strong>{{e.role}}</strong></p> -->
+        
+    <p> Id : {{e.empId}} &nbsp;&nbsp;  Name : {{e.name}} &nbsp;&nbsp;  Role : {{e.role}}</p>
+</div>
+</ng-container>

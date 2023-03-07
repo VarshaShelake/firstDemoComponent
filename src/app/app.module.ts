@@ -56,6 +56,26 @@ import { NgstyleclassassignComponent } from './ngstyleclassassign/ngstyleclassas
 import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
 import { TemplatedrivenassignComponent } from './templatedrivenassign/templatedrivenassign.component';
 import { ReactiveformassignComponent } from './reactiveformassign/reactiveformassign.component';
+import { Reactiveformassign2Component } from './reactiveformassign2/reactiveformassign2.component';
+import { PipeexamplesComponent } from './pipeexamples/pipeexamples.component';
+
+import { CustomComponent } from './custom/custom.component';
+import { CombinedReactiveformComponent } from './combined-reactiveform/combined-reactiveform.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CustomPipe } from './custom.pipe';
+import { SearchPipe } from './search.pipe';
+import { ProductfilterComponent } from './productfilter/productfilter.component';
+import { ServicepracticeComponent } from './servicepractice/servicepractice.component';
+import { Comp1Component } from './comp1/comp1.component';
+import { Comp2Component } from './comp2/comp2.component';
+import { Comp3Component } from './comp3/comp3.component';
+import { Comp4Component } from './comp4/comp4.component';
+import { Commucomp1Component } from './commucomp1/commucomp1.component';
+import { Commucomp2Component } from './commucomp2/commucomp2.component';
+import { Commucomp3Component } from './commucomp3/commucomp3.component';
+import { Commucomp4Component } from './commucomp4/commucomp4.component';
+
+
 
 
 
@@ -83,7 +103,25 @@ import { ReactiveformassignComponent } from './reactiveformassign/reactiveformas
     NgstyleclassassignComponent,
     ReactiveformsComponent,
     TemplatedrivenassignComponent,
-    ReactiveformassignComponent,    
+    ReactiveformassignComponent,
+    Reactiveformassign2Component,
+    PipeexamplesComponent,
+    
+    CustomComponent,
+    CombinedReactiveformComponent,
+    CustomPipe,
+    SearchPipe,
+    ProductfilterComponent,
+    ServicepracticeComponent,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    Comp4Component,
+    Commucomp1Component,
+    Commucomp2Component,
+    Commucomp3Component,
+    Commucomp4Component,
+     
 
     
     
@@ -116,7 +154,8 @@ import { ReactiveformassignComponent } from './reactiveformassign/reactiveformas
     MatCheckboxModule,
     MatStepperModule,
     MatProgressBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [],
