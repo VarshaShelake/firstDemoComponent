@@ -1,0 +1,84 @@
+<p>userpost works!</p>
+
+<!-- <div>
+    <div>
+        <div>
+            <table class="table">
+                <thead>
+                     <tr>
+                        <td>
+                            UserId
+                        </td>
+                        <td>
+                            Id
+                        </td>
+                        <td>
+                            Title
+                        </td>
+                        <td>
+                            Body
+                        </td>
+                     </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let post of arrPost">
+                        <td>{{post.userId}}</td>
+                        <td><a [routerLink]="['/postDetails',post.id]">{{post.id}}</a></td>
+                        <td>{{post.title}}</td>
+                        <td>{{post.body}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> -->
+
+<div>
+    <div>
+        <div>
+            <table class="table">
+                <thead>
+                   <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>UserName</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Website</th>
+                    <!-- <th>Company</th> -->
+                    <!-- <th>Address</th> -->
+                        <!-- <th>Street</th>
+                        <th>Suite</th>
+                        <th>City</th>
+                        <th>Zipcode</th>
+                        <th>Geo</th>
+                            <th>Lat</th>
+                            <th>Lng</th> -->
+                        
+                    
+                   </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of arrUser">
+                        <td><a [routerLink]="['/userDetails',user.id]">{{user.id}}</a></td>
+                     
+                        <td>{{user.name}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.phone}}</td>
+                        <td>{{user.website}}</td>
+                        <!-- <td>{{user.company}}</td> -->
+                        <!-- <td>{{user.address}}</td> -->
+                        <!-- <td>{{user.Street}}</td>
+                        <td>{{user.Suite}}</td>
+                        <td>{{user.City}}</td>
+                        <td>{{user.Zipcode}}</td>
+                        <td>{{user.Geo}}</td>
+                        <td>{{user.Lat}}</td>
+                        <td>{{user.Lng}}</td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

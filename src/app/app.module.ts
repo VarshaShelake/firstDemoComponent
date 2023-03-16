@@ -74,6 +74,28 @@ import { Commucomp1Component } from './commucomp1/commucomp1.component';
 import { Commucomp2Component } from './commucomp2/commucomp2.component';
 import { Commucomp3Component } from './commucomp3/commucomp3.component';
 import { Commucomp4Component } from './commucomp4/commucomp4.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { HomeComponent } from './home/home.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+// import { ProductComponent } from './product/product.component';
+// import { LaptopComponent } from './product/laptop/laptop.component';
+// import { MobileComponent } from './product/mobile/mobile.component';
+// import { CameraComponent } from './product/camera/camera.component';
+// import { WatchComponent } from './product/watch/watch.component';
+import { DemopostComponent } from './demopost/demopost.component';
+import { DemppostdetailsComponent } from './demppostdetails/demppostdetails.component';
+import { UserpostComponent } from './userpost/userpost.component';
+import { UserpostdetailsComponent } from './userpostdetails/userpostdetails.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { ProductModule } from './FutureModule/product/product.module';
+import { OrdersModule } from './FutureModule/product/orders/orders.module';
+import { FashionModule } from './FutureModule/product/Fashion/fashion/fashion.module';
+import { AdminModule } from './FutureModule/product/admin/admin.module';
+import { CustomerModule } from './FutureModule/product/customer/customer.module';
+import { FirebasepostComponent } from './firebasepost/firebasepost.component';
+import { TodoComponent } from './todo/todo.component';
+// import { User } from './models/user.ts/user.ts.component';
 
 
 
@@ -97,7 +119,7 @@ import { Commucomp4Component } from './commucomp4/commucomp4.component';
     NgswitchassignComponent,
     NgstyleComponent,
     NgclassComponent,
-    CustomDirective,
+    // CustomDirective,
     TemplateformComponent,
     EmpregistrationformComponent,
     NgstyleclassassignComponent,
@@ -121,6 +143,23 @@ import { Commucomp4Component } from './commucomp4/commucomp4.component';
     Commucomp2Component,
     Commucomp3Component,
     Commucomp4Component,
+    AboutusComponent,
+    ContactusComponent,
+    HomeComponent,
+    PagenotfoundComponent,
+    // ProductComponent,
+    // LaptopComponent,
+    // MobileComponent,
+    // CameraComponent,
+    // WatchComponent,
+    DemopostComponent,
+    DemppostdetailsComponent,
+    UserpostComponent,
+    UserpostdetailsComponent,
+    UserdetailsComponent,
+    FirebasepostComponent,
+    TodoComponent,
+    // User.TsComponent,
      
 
     
@@ -155,10 +194,20 @@ import { Commucomp4Component } from './commucomp4/commucomp4.component';
     MatStepperModule,
     MatProgressBarModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ProductModule,
+    OrdersModule,
+    FashionModule,
+    
+  
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){
+    console.log('AppModule constructor called');
+  }
+ 
+}

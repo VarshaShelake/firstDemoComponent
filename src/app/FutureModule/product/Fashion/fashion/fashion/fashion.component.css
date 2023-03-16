@@ -1,0 +1,13 @@
+.card{
+    display: inline-block;
+    margin: 15px 15px 15px;
+    width: 12%;
+    
+
+}
+.fashion{
+    color: blueviolet;
+    font-size: x-large;
+    background-color: cyan;
+
+}
