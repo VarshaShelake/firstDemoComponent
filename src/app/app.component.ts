@@ -11,7 +11,9 @@ import { RapidapisService } from './services/rapidapis.service';
 })
 
 export class AppComponent implements OnInit{
-  // parentToChild : string ='i am coming from server'
+  parentToChild : string ='i am coming from server';
+
+
   title = 'firstDemoComponent'; 
   name = "Varsha";
   empCount;

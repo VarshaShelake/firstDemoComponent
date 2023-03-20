@@ -38,6 +38,10 @@ import { CustomerListComponent } from './FutureModule/product/customer/customer-
 import { AdminListComponent } from './FutureModule/product/admin/admin-list/admin-list.component';
 import { FirebasepostComponent } from './firebasepost/firebasepost.component';
 import { TodoComponent } from './todo/todo.component';
+import { CustomobservableComponent } from './customobservable/customobservable.component';
+import { AuthGuard } from './auth.guard';
+import { LiginformComponent } from './liginform/liginform.component';
+import { HooksComponent } from './hooks/hooks.component';
 
 
 // const routes: Routes = [
@@ -78,7 +82,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   {path : 'aboutus', component : AboutusComponent},
   {path : 'contactus', component : ContactusComponent},
-  {path : 'product' , component: ProductComponent,
+  {path : 'product' ,  canActivate :[AuthGuard] ,component: ProductComponent,
   children: [
  {path:'laptop', component: LaptopComponent},
   {path:'mobile', component: MobileComponent},
@@ -86,6 +90,7 @@ const routes: Routes = [
   {path:'watch',component: WatchComponent} 
 ] 
 },
+{path : 'login', component :LiginformComponent},
   {path : 'post', component:DemopostComponent},
   {path : 'postDetails/:id' , component : DemppostdetailsComponent },
   {path : 'user', component : UserpostComponent},
@@ -100,6 +105,8 @@ const routes: Routes = [
   {path : 'admin', loadChildren : './FutureModule/product/admin/admin.module#AdminModule'},
   { path : 'firebase' , component : FirebasepostComponent},
   {path : 'todo' , component : TodoComponent},
+  {path : 'customobs' , component : CustomobservableComponent},
+  {path : 'hooks', component : HooksComponent},
   {path:'**',component:PagenotfoundComponent}
 ];
 

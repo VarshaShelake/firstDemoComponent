@@ -1,0 +1,9 @@
+<p>liginform works!</p>
+
+<input type="text" #username placeholder="Please enter username"><br>
+<input type="text" #password placeholder="Please enter password">
+
+<button class="btn btn-primary" (click)="login(username.value,password.value)">Login</button>
+
+<br>
+<span>{{msg}}</span>

@@ -180,6 +180,7 @@
       <li class="nav-item"><a routerLinkActive="active" routerLink="/aboutus" class="nav-link">AboutUs</a></li>
       <li class="nav-item"><a  routerLinkActive="active" routerLink="/contactus" class="nav-link">ContactUs</a></li>
       <li class="nav-item"><a routerLinkActive="active" routerLink="/product" class="nav-link">Product</a></li>
+      <li class="nav-item"><a routerLinkActive="active" routerLink="/login" class="nav-link">Login</a></li>
       <li class="nav-item"><a routerLinkActive="active" routerLink="/post" class="nav-link">Post</a></li>
       <li class="nav-item"><a routerLinkActive="active" routerLink="/user" class="nav-link">User</a></li>
       <li class="nav-item"><a routerLinkActive="active" routerLink="/login" class="nav-link">Login</a></li>
@@ -188,9 +189,13 @@
       <li class="nav-item"><a routerLinkActive="active" routerLink="/admin" class="nav-link">Admin</a></li>
       <li class="nav-item"><a routerLinkActive="active" routerLink="/firebase" class="nav-link">Firebase</a></li>
       <li class="nav-item"><a routerLinkActive="active" routerLink="/todo" class="nav-link">Todo</a></li>
+      <li class="nav-item"><a routerLinkActive="active" routerLink="/customobs" class="nav-link">CustomObservable</a></li>
+      <li class="nav-item"><a routerLinkActive="active" routerLink="/hooks" class="nav-link">Life Cycle Hook</a></li>
     </ul>
   </nav>
 </header>
+
+<app-hooks [parentData]="parentToChild"></app-hooks>
 
 <!-- <header>
   <nav>

@@ -30,7 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatMenuModule} from '@angular/material/menu';
-import {MatButtonModule} from '@angular/material/button'
+import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -61,7 +61,7 @@ import { PipeexamplesComponent } from './pipeexamples/pipeexamples.component';
 
 import { CustomComponent } from './custom/custom.component';
 import { CombinedReactiveformComponent } from './combined-reactiveform/combined-reactiveform.component';
-import { HttpClientModule } from '@angular/common/http';
+// import { HttpClientModule } from '@angular/common/http';
 import { CustomPipe } from './custom.pipe';
 import { SearchPipe } from './search.pipe';
 import { ProductfilterComponent } from './productfilter/productfilter.component';
@@ -95,6 +95,11 @@ import { AdminModule } from './FutureModule/product/admin/admin.module';
 import { CustomerModule } from './FutureModule/product/customer/customer.module';
 import { FirebasepostComponent } from './firebasepost/firebasepost.component';
 import { TodoComponent } from './todo/todo.component';
+import { CustomobservableComponent } from './customobservable/customobservable.component';
+import { LiginformComponent } from './liginform/liginform.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { HooksComponent } from './hooks/hooks.component';
 // import { User } from './models/user.ts/user.ts.component';
 
 
@@ -159,6 +164,9 @@ import { TodoComponent } from './todo/todo.component';
     UserdetailsComponent,
     FirebasepostComponent,
     TodoComponent,
+    CustomobservableComponent,
+    LiginformComponent,
+    HooksComponent
     // User.TsComponent,
      
 
@@ -202,7 +210,12 @@ import { TodoComponent } from './todo/todo.component';
   
 
   ],
-  providers: [],
+  // providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
