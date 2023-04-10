@@ -42,6 +42,12 @@ import { CustomobservableComponent } from './customobservable/customobservable.c
 import { AuthGuard } from './auth.guard';
 import { LiginformComponent } from './liginform/liginform.component';
 import { HooksComponent } from './hooks/hooks.component';
+import { HooklifecyComponent } from './hooklifecy/hooklifecy.component';
+import { AdduserComponent } from './adduser/adduser.component';
+import { UnsavedchangesGuard } from './unsavedchanges.guard';
+import { ResolveguarduserComponent } from './resolveguarduser/resolveguarduser.component';
+import { ResolveguardGuard } from './resolveguard.guard';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 // const routes: Routes = [
@@ -106,7 +112,13 @@ const routes: Routes = [
   { path : 'firebase' , component : FirebasepostComponent},
   {path : 'todo' , component : TodoComponent},
   {path : 'customobs' , component : CustomobservableComponent},
-  {path : 'hooks', component : HooksComponent},
+  // {path : 'hooks', component : HooksComponent},
+  {path : 'hook', component : HooklifecyComponent},
+  {path : 'adduser', component : AdduserComponent , canDeactivate : [UnsavedchangesGuard]},
+  {path : 'resolveguarduser' , component : ResolveguarduserComponent,resolve :{
+    data : ResolveguardGuard
+  }},
+  {path : 'rxjs' , component : RxjsComponent},
   {path:'**',component:PagenotfoundComponent}
 ];
 

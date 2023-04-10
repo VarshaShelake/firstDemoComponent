@@ -100,6 +100,11 @@ import { LiginformComponent } from './liginform/liginform.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { HooksComponent } from './hooks/hooks.component';
+import { HooklifecyComponent } from './hooklifecy/hooklifecy.component';
+import { WikiComponent } from './wiki/wiki.component';
+import { AdduserComponent } from './adduser/adduser.component';
+import { ResolveguarduserComponent } from './resolveguarduser/resolveguarduser.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 // import { User } from './models/user.ts/user.ts.component';
 
 
@@ -166,7 +171,12 @@ import { HooksComponent } from './hooks/hooks.component';
     TodoComponent,
     CustomobservableComponent,
     LiginformComponent,
-    HooksComponent
+    HooksComponent,
+    HooklifecyComponent,
+    WikiComponent,
+    AdduserComponent,
+    ResolveguarduserComponent,
+    RxjsComponent
     // User.TsComponent,
      
 

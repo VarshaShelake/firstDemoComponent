@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import { Employee } from './models/employee';
 import { DemoserviceService } from './services/demoservice.service';
 import { MysericesService } from './services/myserices.service';
@@ -11,7 +13,38 @@ import { RapidapisService } from './services/rapidapis.service';
 })
 
 export class AppComponent implements OnInit{
+
+  data4 : string = 'green';
+
+  data5 = 0;
+
+  data6 : String = 'red';
+
+    appChildExist : boolean = true;
+myObservable : any;
+
+  changeFromParent1(){
+    this.data5+=1;
+  }
+
+  handleData(value){
+    this.data6 = value.target.value;
+  }
+
+  onDestroy(){
+    this.appChildExist = false;
+  }
   parentToChild : string ='i am coming from server';
+
+    data1 = 0;
+
+    countt = 0;
+ 
+    
+
+    changeFromParent(){
+      this.countt +=1;
+    }
 
 
   title = 'firstDemoComponent'; 
@@ -47,8 +80,12 @@ this.getValueFromServer();
 }
 
 ngOnInit():void {
+  // this.myObservable = of('This is my observable').pipe(delay(3000)).subscribe(res =>{
+  //   console.log('observable data',res);
+  // })
+  this.myObservable = of('This is my observable').pipe(delay(3000));
 
-  this.rapidApisService.getFinance().subscribe(res => {
+     this.rapidApisService.getFinance().subscribe(res => {
     console.log('Rapid Response',res);
     
   })
